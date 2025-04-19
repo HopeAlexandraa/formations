@@ -52,3 +52,40 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
 });
+
+<form id="contactForm">
+  <input type="text" name="name" placeholder="Nom" required>
+  <input type="email" name="email" placeholder="Email" required>
+  <textarea name="message" placeholder="Votre message" required></textarea>
+  <button type="submit">Envoyer</button>
+  <div id="success-message" style="display:none; color: green;">Message envoyé avec succès ! ✅</div>
+</form>
+
+
+  const form = document.getElementById("contactForm");
+
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault(); // empêche le rechargement de la page
+
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch("https://formspree.io/f/mvgkearj", {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (response.ok) {
+        document.getElementById("success-message").style.display = "block";
+        form.reset(); // Réinitialise les champs du formulaire
+      } else {
+        alert("Une erreur s’est produite. Veuillez réessayer.");
+      }
+    } catch (error) {
+      alert("Erreur réseau. Vérifiez votre connexion.");
+    }
+  });
+
