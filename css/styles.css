@@ -10,6 +10,49 @@
  * Copyright 2011-2022 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+
+
+/* Navbar personnalisée */
+.custom-navbar {
+  background-color: #0d6efd; /* Couleur bleu foncé Bootstrap */
+  transition: background-color 0.3s ease;
+}
+
+/* Option : Changer de couleur au scroll */
+.custom-navbar.scrolled {
+  background-color: #084298; /* Un bleu encore plus foncé quand on scrolle */
+}
+
+/* Pour s'assurer que les liens sont bien visibles */
+.navbar-nav .nav-link {
+  color: rgb(157, 156, 156);
+}
+
+.navbar-nav .nav-link:hover {
+  color: #ffc107; /* Belle couleur dorée au survol */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
@@ -3609,9 +3652,9 @@ textarea.form-control-lg {
   --bs-nav-link-padding-x: 1rem;
   --bs-nav-link-padding-y: 0.5rem;
   --bs-nav-link-font-weight: ;
-  --bs-nav-link-color: var(--bs-link-color);
+  --bs-nav-link-color: color: var(--bs-gray);
   --bs-nav-link-hover-color: var(--bs-link-hover-color);
-  --bs-nav-link-disabled-color: #6c757d;
+  --bs-nav-link-disabled-color: #306491;
   display: flex;
   flex-wrap: wrap;
   padding-left: 0;
